@@ -78,10 +78,11 @@ app.post("/quiz", async (req, res) => {
 
     res.json(pergunta);
 
-  } catch (err) {
+} catch (err) {
   console.error("ERRO REAL:", err);
   res.status(500).json({ error: err.message });
 }
+});
 
 // ====================== TESTE ======================
 app.get("/", (req, res) => {

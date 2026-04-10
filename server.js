@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 dotenv.config();
+console.log("KEY:", process.env.GEMINI_API_KEY);
 
 const app = express();
 app.use(cors());
@@ -78,10 +79,9 @@ app.post("/quiz", async (req, res) => {
     res.json(pergunta);
 
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Erro ao gerar quiz" });
-  }
-});
+  console.error("ERRO REAL:", err);
+  res.status(500).json({ error: err.message });
+}
 
 // ====================== TESTE ======================
 app.get("/", (req, res) => {

@@ -20,14 +20,14 @@ async function gerarPerguntas(tema) {
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const prompt = `
-  Crie 10 perguntas de múltipla escolha sobre ${tema}.
+  Crie 10 perguntas dificuldade media de múltipla escolha sobre ${tema}.
 
   Formato JSON:
   [
     {
       "pergunta": "...",
-      "alternativas": ["...", "...", "...", "..."],
-      "resposta": "..."
+      "alternativas": ["A)...", "B)...", "C)...", "D)..."],
+      "resposta": "...)..."
     }
   ]
   `;
